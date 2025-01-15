@@ -2,7 +2,7 @@
 
 ## Overview
 
-Melanoma is the deadliest type of skin cancer, accounting for 75% of skin cancer-related deaths. Early detection is critical, as it significantly improves treatment outcomes. Traditional diagnosis involves clinical screening, dermoscopic analysis, and histopathological examination. Dermatologists use dermatoscopic images for initial assessments, achieving diagnostic accuracies of 65% to 80%. With additional evaluations by oncologists and advanced analysis, the accuracy improves to 75% to 84%.  
+Melanoma is the deadliest type of skin cancer, accounting for 75% of skin cancer-related deaths. Early detection is critical, as it significantly improves treatment outcomes. Traditional diagnosis involves clinical screening, dermoscopic analysis, and histopathological examination. Dermatologists use dermatoscopic images for initial assessments, achieving diagnostic accuracies of 65% to 80%. With additional evaluations by oncologists and advanced analysis, the accuracy improves to 75% to 84%.
 
 This project aims to develop an automated classification system using image processing and deep learning techniques to classify skin lesions and assist in the early detection of melanoma.
 
@@ -48,12 +48,11 @@ The following steps outline the design of the CNN architecture used in this proj
    The model is compiled with the Adam optimizer (`optimizer='adam'`) and Sparse Categorical Crossentropy loss function (`loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)`), suitable for multi-class classification. Accuracy is used as the evaluation metric (`metrics=['accuracy']`).
 
 10. **Training**  
-    The model is trained for 50 epochs using the `fit` method. Two callbacks are implemented:
-    - **ModelCheckpoint**: Saves the model with the best validation accuracy.
-    - **EarlyStopping**: Halts training if validation accuracy does not improve for five consecutive epochs (`patience=5`).  
+    The model is trained for 20 epochs initially and later with 30 epochs using the `fit` method as per the recommendation in the Case Study. The callbacks implemented is below:
+    - **EarlyStopping**: Halts training if validation accuracy does not improve for five consecutive epochs (`patience=5`).
 
 These steps ensure efficient training, minimize overfitting, and optimize the model's performance for classifying skin cancer images.
 
 ## Collaborators
 
-Created by [@90mlnoob](https://github.com/90mlnoob)
+Created by Saurav Suman - [@90mlnoob](https://github.com/90mlnoob)
